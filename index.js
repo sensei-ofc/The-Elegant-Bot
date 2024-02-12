@@ -79,10 +79,10 @@ function clearTmp() {
       const stats = statSync(file);
       if (stats.isFile() && (Date.now() - stats.mtimeMs >= 1000 * 60 * 3)) {
           try {
-              unlinkSync(file); // Intenta eliminar el archivo
-              return true; // Devuelve true si se elimina correctamente
+              unlinkSync(file);
+              return true;
           } catch (error) {
-              return false; // Devuelve false si hay un error al eliminar
+              return false;
           }
       }
       return false;
