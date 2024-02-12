@@ -636,7 +636,7 @@ const smsReg7 = (name, user, age, time, date, sender, sn, prefix, rtotalreg) => 
  ${prefix}menu\n\n ◉ *Total de usuários registrados:* ${rtotalreg}` }
 const smsReg8 = () => { return `*💬 Elegir tu idioma con:* #idioma` }
  
-const cuenta = (nna, md, yt, tiktok, fb) => { return `*Bienvenido a las cuentas oficiales ✨*
+const cuenta = (nna, md, yt, tiktok, fb, ig) => { return `*Bienvenido a las cuentas oficiales ✨*
 
 *👑 Numero del bot oficial:*
 • wa.me/51910628581
@@ -652,6 +652,9 @@ const cuenta = (nna, md, yt, tiktok, fb) => { return `*Bienvenido a las cuentas 
 
 *✨ TIKTOK:*
 • ${tiktok}
+
+*✨ TIKTOK:*
+• ${ig}
 
 *✨ FACEBOOK:*
 • ${fb}
