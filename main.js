@@ -419,7 +419,7 @@ case 'lb': case 'leaderboard': case 'afk': case 'rob': case 'robar': case 'buy':
 break           
       
 //stickers
-case 's': case 'sticker': case 'wm': case 'take': case 'attp': case 'dado': stickers(m, command, conn, mime, quoted, args, text, lolkeysapi, fkontak)  
+case 's': case 'sticker': case 's2': case 'sticker2': case 'wm': case 'take': case 'attp': case 'dado': case 'llorar': case 'matar': case 'acariciar': case 'lamer': case 'besar': case 'morder': case 'lanzar': case 'arrojar': case 'acosar': case 'bullying': case 'bofetada': case 'sonreir': case 'awoo': case 'sonrojar': case 'sonrojarse': case 'orgulloso': case 'engreido': case 'engreida': case 'abrazar': case 'golpear': case 'guiñar': case 'tocar': case 'comer': case 'saludar': case 'glomp': case 'estrangulamiento': case 'feliz': case 'bailar': case 'avergonzarse': case 'acurrucar': case 'loscinco': case 'shinobu': case 'sujetar': case 'ladrido': case 'bola_8': case 'ganso': case 'gecg': case 'alimentar': case 'chica_zorro': case 'lagarto': case 'nalgada': case 'azotar': case 'maullar': case 'cosquillas': stickers(m, command, conn, mime, quoted, args, text, lolkeysapi, fkontak)  
 break
   
 //idiomas 
@@ -780,8 +780,9 @@ return reply(String(execSync(budy.slice(2), { encoding: 'utf-8' })))
 console.log(util.format(err))  
  
 //--------------------[ ERRORS ]-----------------------\\
-let e = String(err)
-console.log('Caught exception: ', err)
+let e = String(err) 
+process.on('uncaughtException', function (err) {
+console.log('Caught exception: ', err)})}}}}
 
 //--------------------[ UPDATE/CONSOLA ]-----------------------\\
 
