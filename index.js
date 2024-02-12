@@ -14,7 +14,7 @@ const { execSync } = require('child_process')
 const util = require('util')
 const pino = require('pino')
 const Pino = require("pino")
-const cfonts = require('cfonts') 
+const cfonts = require('cfonts')
 const { tmpdir } = require('os')
 const { join } = require('path')
 const PhoneNumber = require('awesome-phonenumber')
@@ -108,12 +108,12 @@ function purgeSession() {
 let prekey = []
 let directorio = readdirSync("./sessions")
 let filesFolderPreKeys = directorio.filter(file => {
-return file.startsWith('pre-key-') //|| file.startsWith('session-') || file.startsWith('sender-') || file.startsWith('app-') 
+return file.startsWith('pre-key-') //|| file.startsWith('session-') || file.startsWith('sender-') || file.startsWith('app-')
 })
 prekey = [...prekey, ...filesFolderPreKeys]
 filesFolderPreKeys.forEach(files => {
 unlinkSync(`./sessions/${files}`)
-})} 
+})}
 
 function purgeSessionSB() {
 try {
@@ -144,11 +144,11 @@ files.forEach(file => {
 const filePath = path.join(dir, file)
 stat(filePath, (err, stats) => {
 if (err) throw err;
-if (stats.isFile() && stats.mtimeMs < oneHourAgo && file !== 'creds.json') { 
-unlinkSync(filePath, err => {  
+if (stats.isFile() && stats.mtimeMs < oneHourAgo && file !== 'creds.json') {
+unlinkSync(filePath, err => {
 if (err) throw err
 console.log(chalk.bold.green(`${lenguaje['archivo']()} ${file} ${lenguaje['archivoborrado']()}`))})
-} else {  
+} else {
 console.log(chalk.bold.red(`${lenguaje['archivo']()} ${file} ${lenguaje['archborrado']()}` + err))
 } }) }) }) })}
 setInterval(async () => {
@@ -164,13 +164,13 @@ setInterval(async () => {
   console.log(chalk.cyanBright(`${lenguaje['purgeoldfiles']()}`));
 }, 1000 * 60 * 60);
 //___________
-    
+
 const store = makeInMemoryStore({logger: pino().child({
 level: 'silent',
 stream: 'store'
 })})
 
-//configuración 
+//configuración
 const methodCodeQR = process.argv.includes("qr")
 const pairingCode = !!phoneNumber || process.argv.includes("--pairing-code")
 const methodCode = !!phoneNumber || process.argv.includes("code")
@@ -189,18 +189,18 @@ if (methodCodeQR) {
 opcion = '1'
 }
 if (!methodCodeQR && !methodCode && !fs.existsSync(`./sessions/creds.json`)) {
-do {        
+do {
 let lineM = '┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅'
-opcion = await question(`┏${lineM}  
+opcion = await question(`┏${lineM}
 ┋ ${chalk.blueBright('┏┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')}
 ┋ ${chalk.blueBright('┋')} ${chalk.blue.bgBlue.bold.cyan('MÉTODO DE VINCULACIÓN')}
-┋ ${chalk.blueBright('┗┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')}   
-┋ ${chalk.blueBright('┏┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')}     
+┋ ${chalk.blueBright('┗┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')}
+┋ ${chalk.blueBright('┏┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')}
 ┋ ${chalk.blueBright('┋')} ${chalk.green.bgMagenta.bold.yellow('¿CÓMO DESEA CONECTARSE?')}
 ┋ ${chalk.blueBright('┋')} ${chalk.bold.redBright('⇢  Opción 1:')} ${chalk.greenBright('Código QR.')}
 ┋ ${chalk.blueBright('┋')} ${chalk.bold.redBright('⇢  Opción 2:')} ${chalk.greenBright('Código de 8 digitos.')}
 ┋ ${chalk.blueBright('┗┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')}
-┋ ${chalk.blueBright('┏┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')}     
+┋ ${chalk.blueBright('┏┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')}
 ┋ ${chalk.blueBright('┋')} ${chalk.italic.magenta('Escriba sólo el número de')}
 ┋ ${chalk.blueBright('┋')} ${chalk.italic.magenta('la opción para conectarse.')}
 ┋ ${chalk.blueBright('┗┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')}
@@ -236,24 +236,24 @@ store.bind(sock.ev)
 if (!fs.existsSync(`./sessions/creds.json`)) {
 if (opcion === '2' || methodCode) {
 opcion = '2'
-if (!sock.authState.creds.registered) {  
+if (!sock.authState.creds.registered) {
 let addNumber
 if (!!phoneNumber) {
 addNumber = phoneNumber.replace(/[^0-9]/g, '')
 if (!Object.keys(PHONENUMBER_MCC).some(v => addNumber.startsWith(v))) {
-console.log(chalk.bgBlack(chalk.bold.redBright("🟢 Comience con el código de país de su número de WhatsApp, ejemplo: +59178862672"))) 
+console.log(chalk.bgBlack(chalk.bold.redBright("🟢 Comience con el código de país de su número de WhatsApp, ejemplo: +59178862672")))
 process.exit(0)
 }} else {
 while (true) {
 addNumber = await question(chalk.bgBlack(chalk.bold.greenBright(`🟢 Ingresa el número que sera bot\nPor ejemplo: +59178862672 `)))
 addNumber = addNumber.replace(/[^0-9]/g, '')
-  
+
 if (addNumber.match(/^\d+$/) && Object.keys(PHONENUMBER_MCC).some(v => addNumber.startsWith(v))) {
 break 
 } else {
 console.log(chalk.bold.redBright("❌ Asegúrese de agregar el código de país."))
 }}
-rl.close()  
+rl.close()
 }
 
 setTimeout(async () => {
@@ -303,7 +303,7 @@ sock.appenTextMessage(prefCmd, chatUpdate)
 }}}})
 
 //anticall
-sock.ev.on('call', async (fuckedcall) => { 
+sock.ev.on('call', async (fuckedcall) => {
 sock.user.jid = sock.user.id.split(":")[0] + "@s.whatsapp.net" // jid in user?
 let anticall = global.db.data.settings[numBot].anticall
 if (!anticall) return
@@ -333,19 +333,19 @@ ppgroup = await sock.profilePictureUrl(anu.id, 'image')
 ppgroup = 'https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png?q=60'
 }
 //let text = ``
-sock.sendMessage(res.id, {text: lenguaje['smsAvisos2'](),  
-contextInfo:{  
-forwardingScore: 9999999,  
-isForwarded: false,   
-mentionedJid:[m.sender],  
-"externalAdReply": {  
-"showAdAttribution": true,  
+sock.sendMessage(res.id, {text: lenguaje['smsAvisos2'](),
+contextInfo:{
+forwardingScore: 9999999,
+isForwarded: false,
+mentionedJid:[m.sender],
+"externalAdReply": {
+"showAdAttribution": true,
 "containsAutoReply": false,
-"renderLargerThumbnail": false,  
-"title": lenguaje['smsAvisos'](), 
-"mediaType": 1,  
-"thumbnail": imagen1,  
-"mediaUrl": md,  
+"renderLargerThumbnail": false,
+"title": lenguaje['smsAvisos'](),
+"mediaType": 1,
+"thumbnail": imagen1,
+"mediaUrl": md,
 "sourceUrl": md
 }}}, {quoted: null, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})
 } else if (res.announce == false) {
@@ -356,21 +356,21 @@ ppgroup = await sock.profilePictureUrl(anu.id, 'image')
 ppgroup = 'https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png?q=60'
 }
 //let text = `「 𝐀𝐉𝐔𝐒𝐓𝐄𝐒 𝐃𝐄𝐋 𝐆𝐑𝐔𝐏𝐎 」\n\n*ᴬʰᵒʳᵃ ᵗᵒᵈᵒˢ ˡᵒˢ ᵖᵃʳᵗᶦᶜᶦᵖᵃⁿᵗᵉˢ ᵖᵘᵉᵈᵉⁿ ᵐᵃⁿᵈᵃʳ ᵐᵉⁿˢᵃʲᵉˢ 🗣️*`
-sock.sendMessage(res.id, {   
-text: lenguaje['smsAvisos4'](),  
-contextInfo:{  
-forwardingScore: 9999999,  
-isForwarded: false,   
-mentionedJid:[m.sender],  
-"externalAdReply": {  
-"showAdAttribution": true,  
+sock.sendMessage(res.id, {
+text: lenguaje['smsAvisos4'](),
+contextInfo:{
+forwardingScore: 9999999,
+isForwarded: false,
+mentionedJid:[m.sender],
+"externalAdReply": {
+"showAdAttribution": true,
 "containsAutoReply": false,
-"renderLargerThumbnail": false,  
-"title": lenguaje['smsAvisos3'](),   
-"mediaType": 1,   
-"thumbnail": imagen1, 
-"mediaUrl": md, 
-"sourceUrl": md  
+"renderLargerThumbnail": false,
+"title": lenguaje['smsAvisos3'](),
+"mediaType": 1,
+"thumbnail": imagen1,
+"mediaUrl": md,
+"sourceUrl": md
 }}}, {quoted: null, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})
 } else if (res.restrict == true) {
 await sleep(2000)
@@ -381,19 +381,19 @@ ppgroup = 'https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png?q=60'
 }
 //let text = `「 𝐀𝐉𝐔𝐒𝐓𝐄𝐒 𝐃𝐄𝐋 𝐆𝐑𝐔𝐏𝐎 」\n\n*ᴬʰᵒʳᵃ ˢᵒˡᵒ ˡᵒˢ ᵃᵈᵐᶦⁿˢ ᵖᵘᵉᵈᵉ ᵉᵈᶦᵗᵃʳ ˡᵒˢ ᵃʲᵘˢᵗᵉ ᵈᵉˡ ᵍʳᵘᵖᵒ*`
 sock.sendMessage(res.id, {text: lenguaje['smsAvisos6'](),
-contextInfo:{  
-forwardingScore: 9999999,  
-isForwarded: false,   
-mentionedJid:[m.sender],  
-"externalAdReply": {  
-"showAdAttribution": true,  
+contextInfo:{
+forwardingScore: 9999999,
+isForwarded: false,
+mentionedJid:[m.sender],
+"externalAdReply": {
+"showAdAttribution": true,
 "containsAutoReply": false,
-"renderLargerThumbnail": false,  
+"renderLargerThumbnail": false,
 "title": lenguaje['smsAvisos5'](),
-"body": wm, 
-"mediaType": 1,   
-"thumbnail": imagen1, 
-"mediaUrl": md, 
+"body": wm,
+"mediaType": 1,
+"thumbnail": imagen1,
+"mediaUrl": md,
 "sourceUrl": yt
 }}}, {quoted: null, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})
 } else if (res.restrict == false) {
@@ -404,20 +404,20 @@ ppgroup = await sock.profilePictureUrl(anu.id, 'image')
 ppgroup = 'https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png?q=60'
 }
 //let text = `「 𝐀𝐉𝐔𝐒𝐓𝐄𝐒 𝐃𝐄𝐋 𝐆𝐑𝐔𝐏𝐎 」\n\n*ᴬʰᵒʳᵃ ᵗᵒᵈᵒˢ ˡᵒˢ ᵖᵃʳᵗᶦᶜᶦᵖᵃʳᵗᵉ ᵖᵘᵉᵈᵉ ᵉᵈᶦᵗᵃʳ ˡᵒˢ ᵃʲᵘˢᵗᵉ ᵈᵉˡ ᵍʳᵘᵖᵒ*`
-sock.sendMessage(res.id, {text: lenguaje['smsAvisos7'](),  
+sock.sendMessage(res.id, {text: lenguaje['smsAvisos7'](),
 contextInfo:{  
-forwardingScore: 9999999,  
-isForwarded: false,   
-mentionedJid:[m.sender],  
-"externalAdReply": {  
-"showAdAttribution": true,  
+forwardingScore: 9999999,
+isForwarded: false,
+mentionedJid:[m.sender],
+"externalAdReply": {
+"showAdAttribution": true,
 "containsAutoReply": false,
-"renderLargerThumbnail": false,  
+"renderLargerThumbnail": false,
 "title": lenguaje['smsAvisos5'](),
-"body": wm, 
-"mediaType": 1,   
-"thumbnail": imagen1, 
-"mediaUrl": md, 
+"body": wm,
+"mediaType": 1,
+"thumbnail": imagen1,
+"mediaUrl": md,
 "sourceUrl": md
 }}}, {quoted: null, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})
 } else if(!res.desc == ''){
@@ -428,20 +428,20 @@ ppgroup = await sock.profilePictureUrl(anu.id, 'image')
 ppgroup = 'https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png?q=60'
 }
 let text = `${lenguaje['smsAvisos8']()}\n${res.desc}`
-sock.sendMessage(res.id, {text: text,  
-contextInfo:{  
-forwardingScore: 9999999,  
-isForwarded: false,   
-mentionedJid:[m.sender],  
-"externalAdReply": {  
-"showAdAttribution": true,  
+sock.sendMessage(res.id, {text: text,
+contextInfo:{
+forwardingScore: 9999999,
+isForwarded: false,
+mentionedJid:[m.sender],
+"externalAdReply": {
+"showAdAttribution": true,
 "containsAutoReply": false,
-"renderLargerThumbnail": false,  
+"renderLargerThumbnail": false,
 "title": lenguaje['smsAvisos5'](),
-"body": wm, 
-"mediaType": 1,   
-"thumbnail": imagen1, 
-"mediaUrl": md,  
+"body": wm,
+"mediaType": 1,
+"thumbnail": imagen1,
+"mediaUrl": md,
 "sourceUrl": md
 }}}, {quoted: null, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})
 } else {
@@ -453,19 +453,19 @@ ppgroup = 'https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png?q=60'
 }
 let text = `${lenguaje['smsAvisos9']()}\n${res.subject}`
 sock.sendMessage(res.id, {text: text,  
-contextInfo:{  
-forwardingScore: 9999999,  
-isForwarded: false,   
-mentionedJid:[m.sender],  
-"externalAdReply": {  
-"showAdAttribution": true,  
+contextInfo:{
+forwardingScore: 9999999,
+isForwarded: false,
+mentionedJid:[m.sender],
+"externalAdReply": {
+"showAdAttribution": true,
 "containsAutoReply": false,
-"renderLargerThumbnail": false,  
+"renderLargerThumbnail": false,
 "title": lenguaje['smsAvisos5'](),
-"body": wm, 
-"mediaType": 1,   
-"thumbnail": imagen1, 
-"mediaUrl": md,  
+"body": wm,
+"mediaType": 1,
+"thumbnail": imagen1,
+"mediaUrl": md,
 "sourceUrl": md
 }}}, {quoted: null, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})
 }})
@@ -506,20 +506,20 @@ let welcome = wel[Math.floor(Math.random() * wel.length)]
 if (media === 'texto')
 sock.sendMessage(anu.id, { text: welcome, mentions: [num]}, {quoted: null, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})
 if (media === 'audio')
-sock.sendMessage(anu.id, { audio: { url: vn }, 
-contextInfo: { mentionedJid:[num], "externalAdReply": { 
-"title": `乂 ＷＥＬＣＯＭＥ 乂`, 
-"body": `${name.split("@")[0]}`, 
+sock.sendMessage(anu.id, { audio: { url: vn },
+contextInfo: { mentionedJid:[num], "externalAdReply": {
+"title": `乂 ＷＥＬＣＯＭＥ 乂`,
+"body": `${name.split("@")[0]}`,
 "previewType": "PHOTO", 
 "thumbnailUrl": null,
-"thumbnail": welc, 
-"sourceUrl": `${pickRandom([md, yt])}`, 
-"showAdAttribution": true}}, 
+"thumbnail": welc,
+"sourceUrl": `${pickRandom([md, yt])}`,
+"showAdAttribution": true}},
 seconds: '4556', ptt: true, mimetype: 'audio/mpeg', fileName: `error.mp3` }, {quoted: null, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})
 if (media === 'texto2')
 sock.sendMessage(anu.id, { text: `${lenguaje['smsWel7']()} ${lenguaje['smsWel']()} @${name.split("@")[0]} ${lenguaje['smsWel2']()}\n${lenguaje['smsWel8']()} ${metadata.subject}\n${lenguaje['smsWel9']()} ${miembros}\n${lenguaje['smsWel10']()} ${date}\n\n${lenguaje['smsWel11']()} \n\n${metadata.desc}`, contextInfo:{
 forwardingScore: 9999999,
-isForwarded: false, 
+isForwarded: false,
 mentionedJid:[num],
 "externalAdReply": {"showAdAttribution": true,
 "containsAutoReply": true,
@@ -590,7 +590,7 @@ console.log(`${err} Error`)
 
 function pickRandom(list) {
 return list[Math.floor(list.length * Math.random())]
-}  
+}
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
