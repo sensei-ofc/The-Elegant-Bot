@@ -347,7 +347,50 @@ ${lenguaje.menu.text12}
 ├❥ᰰຼ ❏ ${prefix}wm
 ├❥ᰰຼ ❏ ${prefix}attp
 ├❥ᰰຼ ❏ ${prefix}emojimix
-*╰┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭۫*
+├❥ᰰຼ ❏ ${prefix}llorar
+├❥ᰰຼ ❏ ${prefix}matar
+├❥ᰰຼ ❏ ${prefix}acariciar
+├❥ᰰຼ ❏ ${prefix}lamer
+├❥ᰰຼ ❏ ${prefix}besar
+├❥ᰰຼ ❏ ${prefix}morder
+├❥ᰰຼ ❏ ${prefix}lanzar
+├❥ᰰຼ ❏ ${prefix}arrojar
+├❥ᰰຼ ❏ ${prefix}acosar
+├❥ᰰຼ ❏ ${prefix}bullying
+├❥ᰰຼ ❏ ${prefix}bofetada
+├❥ᰰຼ ❏ ${prefix}sonreir
+├❥ᰰຼ ❏ ${prefix}awoo
+├❥ᰰຼ ❏ ${prefix}sonrojar
+├❥ᰰຼ ❏ ${prefix}sonrojarse
+├❥ᰰຼ ❏ ${prefix}orgulloso
+├❥ᰰຼ ❏ ${prefix}engreido
+├❥ᰰຼ ❏ ${prefix}engreida
+├❥ᰰຼ ❏ ${prefix}abrazar
+├❥ᰰຼ ❏ ${prefix}golpear
+├❥ᰰຼ ❏ ${prefix}guiñar
+├❥ᰰຼ ❏ ${prefix}tocar
+├❥ᰰຼ ❏ ${prefix}comer
+├❥ᰰຼ ❏ ${prefix}saludar
+├❥ᰰຼ ❏ ${prefix}glomp
+├❥ᰰຼ ❏ ${prefix}estrangulamiento
+├❥ᰰຼ ❏ ${prefix}feliz
+├❥ᰰຼ ❏ ${prefix}bailar
+├❥ᰰຼ ❏ ${prefix}avergonzarse
+├❥ᰰຼ ❏ ${prefix}acurrucar
+├❥ᰰຼ ❏ ${prefix}loscinco
+├❥ᰰຼ ❏ ${prefix}shinobu
+├❥ᰰຼ ❏ ${prefix}sujetar
+├❥ᰰຼ ❏ ${prefix}ladrido
+├❥ᰰຼ ❏ ${prefix}bola_8
+├❥ᰰຼ ❏ ${prefix}ganso
+├❥ᰰຼ ❏ ${prefix}gecg
+├❥ᰰຼ ❏ ${prefix}alimentar
+├❥ᰰຼ ❏ ${prefix}chica_zorro
+├❥ᰰຼ ❏ ${prefix}lagarto
+├❥ᰰຼ ❏ ${prefix}spank
+├❥ᰰຼ ❏ ${prefix}maullar
+├❥ᰰຼ ❏ ${prefix}cosquillas
+*╰┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭۫*
 
 *╭─╮─᤻─᳒─᤻᳒᯽⃟ᰳᰬᰶ┈*⃐👑ＯＷＮＥＲ*️⃟ᬽ፝֟━*
 ├❥ _(Comando exclusivo para propietario/owner del bot)_
