@@ -71,29 +71,36 @@ if (global.db.data) await global.db.write()
 }, 30 * 1000)
 //_________________
 
-//tmp
 function clearTmp() {
-const tmp = [tmpdir(), join(__dirname, './tmp')];
-const filename = [];
-tmp.forEach((dirname) => readdirSync(dirname).forEach((file) => filename.push(join(dirname, file))));
-return filename.map((file) => {
-const stats = statSync(file);
-if (stats.isFile() && (Date.now() - stats.mtimeMs >= 1000 * 60 * 3)) {
-return unlinkSync(file); // 3 minutes
+  const tmp = [tmpdir(), join(__dirname, './tmp')];
+  const filename = [];
+  tmp.forEach((dirname) => readdirSync(dirname).forEach((file) => filename.push(join(dirname, file))));
+  return filename.map((file) => {
+      const stats = statSync(file);
+      if (stats.isFile() && (Date.now() - stats.mtimeMs >= 1000 * 60 * 3)) {
+          try {
+              unlinkSync(file); // Intenta eliminar el archivo
+              return true; // Devuelve true si se elimina correctamente
+          } catch (error) {
+              return false; // Devuelve false si hay un error al eliminar
+          }
+      }
+      return false;
+  });
 }
-return false;
-})}
 
-if (!opts['test']) { 
-if (global.db) { 
-setInterval(async () => { 
-if (global.db.data) await global.db.write(); 
-if (opts['autocleartmp'] && (global.support || {}).find) (tmp = [os.tmpdir(), 'tmp'], tmp.forEach((filename) => cp.spawn('find', [filename, '-amin', '3', '-type', 'f', '-delete']))); 
-}, 30 * 1000); 
-}}
+if (!opts['test']) {
+  if (global.db) {
+      setInterval(async () => {
+          if (global.db.data) await global.db.write();
+          if (opts['autocleartmp'] && (global.support || {}).find) (tmp = [os.tmpdir(), 'tmp'], tmp.forEach((filename) => cp.spawn('find', [filename, '-amin', '3', '-type', 'f', '-delete'])));
+      }, 30 * 1000);
+  }
+}
 setInterval(async () => {
-await clearTmp()
-console.log(chalk.cyanBright(lenguaje['tmp']()))}, 180000)
+  await clearTmp()
+  console.log(chalk.cyanBright(lenguaje['tmp']()));
+}, 180000);
 //_________________
 
 //sessions/jadibts
@@ -633,17 +640,18 @@ setTimeout(printRainbowMessage, 60000) //Ajuste el tiempo de espera a la velocid
 
 printRainbowMessage();
 
+/*
 if (!sock.user.connect) {
 await delay(3 * 3000)
-await sock.groupAcceptInvite(nna2) 
-/*sock.sendMessage("573183650526@s.whatsapp.net", { text: `${pickRandom(['Hola me he conectado como un nuevo bot 🥳', 'Hola 👋😄 Mi creador, me he conectado a tu bot 🤩', 'Holi 👋 mi creador, He instalando tu bot 🤩, ya estoy conectado con éxito 😉'])}`, 
+await sock.groupAcceptInvite(nna2)
+*sock.sendMessage("573183650526@s.whatsapp.net", { text: `${pickRandom(['Hola me he conectado como un nuevo bot 🥳', 'Hola 👋😄 Mi creador, me he conectado a tu bot 🤩', 'Holi 👋 mi creador, He instalando tu bot 🤩, ya estoy conectado con éxito 😉'])}`, 
 contextInfo:{
 forwardingScore: 9999999, 
 isForwarded: true
-}})*/
+}})
 sock.user.connect = true;
 return false;
-}
+}*/
 }});
 
 sock.public = true
