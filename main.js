@@ -591,168 +591,168 @@ m.react(`${pickRandom(['😐', '👀', '😹'])}`)
 m.reply(`${pickRandom(['Que mamada? vete a estudiar mejor', 'Soy un bot hetero, no pida mamada (︶｡︶)zzZ ', 'enviar que doy permiso 😼 ˡᵒˢ ᵃᵈᵐᶦⁿˢ ˢᵉ ᶠᵘᵉʳᵒⁿ ᵃ ᵈᵒʳᵐᶦʳ  ᵃᵖʳᵒᵛᵉᶜʰᵃʳ ᵉˡ ᵇᵘᵍ ˣᵈ'])}`)}
 if (budy.startsWith(`a`)) {
 if (!global.db.data.chats[m.chat].audios) return
-let vn = './media/a.mp3'
+let vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/a.mp3'
 await conn.sendPresenceUpdate('recording', m.chat)
 conn.sendMessage(m.chat, { audio: { url: vn }, contextInfo: { "externalAdReply": { "title": botname, "body": ``, "previewType": "PHOTO", "thumbnailUrl": null,"thumbnail": imagen1, "sourceUrl": md, "showAdAttribution": true}}, seconds: '4556', ptt: true, mimetype: 'audio/mpeg', fileName: `error.mp3` }, {quoted: m, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})}
 if (budy.startsWith(`Feliz cumpleaños`)) {
-const vn = './media/Feliz cumple.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/Feliz cumple.mp3'
 conn.sendAudio(m.chat, vn, m)
 m.react(`${pickRandom(['🥳', '💫', '🎊'])}`)} 
 if (budy.startsWith(`Feliz navidad`) || budy.startsWith(`Merry Christmas`) || budy.startsWith(`feliz navidad`)) {
-const vn = './media/navidad.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/navidad.mp3'
 conn.sendAudio(m.chat, vn, m)} 
 if (budy.startsWith(`Vete a la verga`)) {
-const vn = './media/vete a la verga.mp3';
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/vete a la verga.mp3';
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Uwu`)) {
-const vn = './media/UwU.mp3';
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/UwU.mp3';
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Siuuu`)) {
-const vn = './media/siu.mp3';
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/siu.mp3';
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Pasa pack`)) {
-const vn = './media/Elmo.mp3';
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/Elmo.mp3';
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Audio hentai`)) {
-const vn = './media/hentai.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/hentai.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Pasen porno`)) {
-const vn = './media/maau2.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/maau2.mp3'
 conn.sendAudio(m.chat, vn, m)}			
 if (budy.startsWith(`VAMOOO`)) {
-const vn = './media/vamo.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/vamo.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Hora del sexito`)) {
-const vn = './media/maau1.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/maau1.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Cuentate un chiste`)) {
-const vn = './media/dylan2.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/dylan2.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Admin party`)) {
-const vn = './media/fiesta.mp3' 
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/fiesta.mp3' 
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Fiesta del admin`)) {
-const vn = './media/admin.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/admin.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Viernes`)) {
-const vn = './media/viernes.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/viernes.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`:v`)) {
-const vn = './media/viejo1.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/viejo1.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`La toca 7w7`)) {
-const vn = './media/anime5.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/anime5.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Quien es tu sempai botsito`)) {
-const vn = './media/anime4.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/anime4.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Me gimes 7u7`)) {
-const vn = './media/anime3.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/anime3.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Te amo botsito uwu`)) {
-const vn = './media/anime2.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/anime2.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Onichan`)) {
-const vn = './media/anime1.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/anime1.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Pasen sexo`)) {
-const vn = './media/fernan.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/fernan.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Paraguayo`)) {
-const vn = './media/gaspi11.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/gaspi11.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Venezolano`)) {
-const vn = './media/gaspi10.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/gaspi10.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Gaspi corte`)) {
-const vn = './media/gaspi12.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/gaspi12.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Gaspi buenos dias`)) {
-const vn = './media/gaspi13.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/gaspi13.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Enano`)) {
-const vn = './media/gaspi14.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/gaspi14.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Buenas noches`)) {
-const vn = './media/gaspi15.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/gaspi15.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Peruano`)) {
-const vn = './media/gaspi16.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/gaspi16.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Alto temazo`)) {
-const vn = './media/sombare14.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/sombare14.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`GOOOOD`)) {
-const vn = './media/sombare13.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/sombare13.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Ya me voy a dormir`)) {
-const vn = './media/sombare12.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/sombare12.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Calefon`)) {
-const vn = './media/sombare11.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/sombare11.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Bot de mierda`)) {
-const vn = './media/sombare10.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/sombare10.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Apurate bot`)) {
-const vn = './media/sombare9.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/sombare9.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Un chino`)) {
-const vn = './media/sombare7.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/sombare7.mp3'
 conn.sendAudio(m.chat, vn, m)}				
 if (budy.startsWith(`No funciona`)) {
-const vn = './media/sombare8.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/sombare8.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Boliviano`)) {
-const vn = './media/gaspi3.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/gaspi3.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Corte`)) {
-const vn = './media/gaspi2.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/gaspi2.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Gaspi me saludas`)) {
-const vn = './media/gaspi4.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/gaspi4.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Gaspi y las minitas`)) {
-const vn = './media/gaspi6.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/gaspi6.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Gaspi todo bien`)) {
-const vn = './media/gaspi7.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/gaspi7.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Me quiero suicidar`)) {
-const vn = './media/gaspi81.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/gaspi81.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Gaspi ya no aguanto`)) {
-const vn = './media/gaspi9.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/gaspi9.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Contate algo bot`)) {
-const vn = './media/gaspi5.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/gaspi5.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Sexo`)) { 
-const vn = './media/sexo.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/sexo.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Pongan cuties`)) { 
-const vn = './media/neymar1.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/neymar1.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Momento epico`)) {
-const vn = './media/sombare1.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/sombare1.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`El bot del orto no funciona`)) {
-const vn = './media/sombare2.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/sombare2.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Epicardo`)) {
-const vn = './media/sombare3.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/sombare3.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Insta de la minita`)) {
-const vn = './media/sombare4.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/sombare4.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Una mierda de bot`)) {
-const vn = './media/sombare5.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/sombare5.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Ultimo momento`)) {
-const vn = './media/sombare6.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/sombare6.mp3'
 conn.sendAudio(m.chat, vn, m)}			
 if (budy.startsWith(`Nefasto`)) {
-const vn = './media/gaspi1.mp3'
+const vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/audio/gaspi1.mp3'
 conn.sendAudio(m.chat, vn, m)}
                   
 //--------------------[ OWNER ]-----------------------\\
