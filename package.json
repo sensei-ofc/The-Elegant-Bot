@@ -1,5 +1,5 @@
 {
-  "name": "NovaBot-MD",
+  "name": "The-Elegant-Bot",
   "version": "1.0.9",
   "description": "Bot de whatsapp",
   "main": "index.js",
@@ -73,6 +73,7 @@
    "youtube-yts": "^2.0.0",
    "yt-search": "^2.10.3",
    "ytdl-core": "^4.11.4",
-   "youtubedl-core": "^4.11.4"
+   "youtubedl-core": "^4.11.4",
+	"ffmpeg-static": "^5.2.0"
   }
   }
