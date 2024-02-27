@@ -504,7 +504,7 @@
                 const date = moment.tz('America/Bogota').format('DD/MM/YYYY');
                 let name = num;
                 const miembros = metadata.participants.length;
-                let vn = './media/Bienvenido.mp3';
+                let vn = 'https://github.com/sensei-ofc/base-de-datos/raw/main/Bienvenido.mp3';
                 let wel = [
                     `${lenguaje['smsWel']()} @${name.split("@")[0]} ${lenguaje['smsWel2']()}`,
                     `${lenguaje['smsWel']()} @${name.split("@")[0]} ${lenguaje['smsWel3']()} ${metadata.subject} 』\n\n${lenguaje['smsWel4']()}`,
